@@ -1,0 +1,114 @@
+/* src/components/Header.css */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%; /* Full-width navbar */
+    background-color: #2C3E50; /* Dark blue background */
+    color: #fff;
+    padding: 10px 0; /* Vertical padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    z-index: 1000;
+  }
+  
+  .navbar-container {
+    width: 80%; /* Increase width for the navbar container */
+    margin: 0 auto; /* Center the container */
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center;
+  }
+  
+  .logo{
+    cursor: pointer; 
+  }
+
+  .logo h2 {
+    font-family: 'Pacifico', cursive; /* Fancy font for logo */
+    font-size: 1.8rem;
+    margin: 0;
+    color: #F1C40F; /* Gold color for logo */
+  }
+
+  .logo:hover h2{
+    color:#fff;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: center; /* Center the nav links */
+    align-items: center;
+    width: 30%; /* Width of nav links container */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin: 0 20px; /* Equal spacing between links */
+  }
+  
+  .nav-button {
+    background: none;
+    border: 2px solid transparent;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.4s ease; /* Smoother transition */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 30px; /* Rounded corners */
+  }
+  .nav-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* Start scale at 0 */
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent overlay */
+    border-radius: 50%; /* Circular overlay */
+    transition: all 0.4s ease; /* Smoother transition */
+    z-index: -1;
+  }
+
+  
+  .nav-button:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Scale to full size */
+  }
+  
+  .nav-button:hover {
+    color: #F1C40F; /* Change text color on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 20px;
+    }
+  
+    .logo h2 {
+      font-size: 1.5rem;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .nav-links li {
+      margin: 10px 0; /* Spacing between links */
+    }
+  
+    .nav-button {
+      width: 100%; /* Full-width buttons */
+      text-align: center; /* Center text */
+    }
+  }
+  

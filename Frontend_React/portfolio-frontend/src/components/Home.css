@@ -1,0 +1,147 @@
+.home-section{
+    height: 100vh;
+    background-image: url('/public/Background-home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+
+.home-container{
+    display: flex;
+    justify-content: right;
+    width: 80%;
+    max-width: 1200px;
+    align-items: right;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
+.home-content{
+    max-width: 800px;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.home-content h1{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 3.5rem;
+    color:#fff;
+    line-height: 1.3;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.home-content .small-heading{
+    font-size: 1.5rem;
+    color: #e74c3c;
+}
+
+.home-content .highlighted{
+    color: #f39c12;
+    font-size: 3.5rem;
+}
+
+.home-content .bottom-heading{
+    font-family: 'Roboto',sans-serif;
+    font-size: 2rem;
+    color: #3498db;
+    margin-bottom: 40px;
+
+}
+.home-buttons{
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    margin-top: 20px;
+}
+
+.hire-me, .my-work{
+    background-color: transparent;
+    color:#fff;
+    border: 2px solid #f1c40f;
+    padding: 12x 24x;
+    font-size: 1.2rem;
+    font-family: 'Montserrat',sans-serif;
+    cursor:pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hire-me:hover,.my-work:hover{
+    background-color: #f1c40f;
+    color:#000;
+}
+
+
+.home-section::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: -1;
+
+}
+
+.social-media-icons{
+    margin-top:20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-media-icons img{
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.social-media-icons img:hover{
+    transform: scale(1.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+@keyframes fadeInUp{
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* responsive styling */
+@media (max-width:768px){
+    .home-content h1{
+        font-size: 2.5rem;
+    }
+    .home-content .small-heading{
+        font-size: 1.2rem;
+    }
+
+    .home-content .bottom-heading{
+        font-size: 1.5rem;
+    }
+
+    .home-buttons{
+        flex-direction: column;
+        gap:10px;
+    }
+}
