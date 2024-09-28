@@ -1,12 +1,23 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import './Sections.css';
 import './Home.css';
+import Chatbot from './Chatbot';
 import Typewriter from 'react-typewriter-effect';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faLinkedin,faGithub,faJsSquare } from '@fortawesome/free-brands-svg-icons';
 
 
 const Home = () => {
+
+  const [chatbotOpen,setChatbotopen]=useState(false);
+
+  const openChatbot=()=>{
+    setChatbotopen(true);
+  }
+
+  const closeChatbot=()=>{
+    setChatbotopen(false);
+  }
   return (
     <section id="home" className="home-section">
       <div className='home-container'>
@@ -29,7 +40,7 @@ const Home = () => {
           </h1>
           <h2 className='bottom-heading'>Software Developer</h2>
           <div className='home-buttons'>
-            <button className='hire-me' onClick={()=>document.getElementById('job-form').scrollIntoView({behavior:'smooth'})}>
+            <button className='hire-me' onClick={openChatbot}>
               Hire Me
             </button>
             <a href='https://github.com/Kgaurav729' target='_blank' rel='noopener noreferrer'>
@@ -50,6 +61,7 @@ const Home = () => {
             </a>
           </div>
         </div>
+        {chatbotOpen && <Chatbot onClose={closeChatbot}/>}
       </div>
     </section>
   );

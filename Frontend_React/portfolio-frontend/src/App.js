@@ -1,5 +1,5 @@
 // src/App.js
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
 import Projects from './components/Projects';
@@ -9,6 +9,11 @@ import './App.css';
 import JobForm from './components/JobForm';
 
 const App = () => {
+  // const [showChatbot,setShowChatbot]=useState(false);
+
+  // const toggleChatbot =()=>{
+  //   setShowChatbot(!showChatbot);
+  // }
   return (
     <div className="App">
       <Header />
@@ -17,7 +22,7 @@ const App = () => {
         <About/>
         <Projects />
         <Contact />
-        <JobForm/>
+        {/* <JobForm/> */}
       </main>
     </div>
   );
